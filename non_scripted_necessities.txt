@@ -1,0 +1,14 @@
+COMMENT: As of now, you must run the following commands in your Ubuntu 18.04 Desktop environment yourself. No other environments are technically supported, but hopefully you can figure them our yourself if need be. Feel free to change what you feel comfortable with (at your own discretion). If anything looks amiss, refer back to these commands to review issues. For a different repo (that you own - as in, you could delete from github altogether if you wanted to), replace wiehehq with YOUR repo
+COMMENT: In the directory /home dev is the user. It is assumed they already have a (hidden) directory of .ssh
+COMMENT: Inside of the directory /.ssh it is assumed that the user wants to call their key id_rsa. If that is not the case, change instances of 'id_rsa' to whatever you want to name your key pair
+COMMENT: For the sake of basic testing, the renmote repo being cloned is this one (git.github.com:wiehehq/git_started.git). You may want to use a different repo (if you're using this tool, you'll almost definitely want to use a repo you created through github.com), because if you try to use this one, it won't work
+
+$ ssh-keygen -t rsa -b 4096 -C "local_repo_default_email.com" -f "/home/dev/.ssh/id_rsa"
+$ eval "$(ssh-agent -s)"
+$ ssh-add ~/.ssh/id_rsa
+$ sudo apt install git-all
+$ git clone git@github.com:wiehehq/git_started.git
+$ cd git_started
+$ git config --global user.email "wiehehq_script_build_email.com"
+$ git config --global user.name "wiehehq_script_build_name"
+$ git pull origin master
