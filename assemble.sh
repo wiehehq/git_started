@@ -2,10 +2,7 @@
 
 bash ssh_setup.sh
 bash git_setup.sh
-
-echo
-echo
-echo
-echo 'finished with assemble.sh'
+sudo bash cli_setup.sh
+sudo bash gui_setup.sh
 
 exit
