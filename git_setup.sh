@@ -16,7 +16,7 @@ elif [ "$defaults_requested" = "N" ] ; then
   echo
 fi
 
-yes | apt install git-all
+sudo apt install git-all
 yes | git clone git@github.com:$git_account/$git_repo.git
 cd git_started
 git config --global user.email $user_email
@@ -26,5 +26,12 @@ echo "$script_random">>push_test_file.txt
 git add push_test_file.txt
 git commit -m "Initial commit - $script_random"
 git push origin master
+
+echo
+echo
+echo
+echo "Scripted randomly generated number $script_random"
+echo
+echo
 
 exit
