@@ -30,7 +30,7 @@ git push origin master
 echo
 echo
 echo
-echo "Scripted randomly generated number $script_random"
+echo "Scripted randomly generated number ------ [$script_random]"
 echo
 echo
 
