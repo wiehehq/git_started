@@ -16,7 +16,8 @@ ssh-keygen -t rsa -b 4096 -C $email -f $ssh_path -q -N ""
 eval "$(ssh-agent -s)"
 ssh-add $ssh_path
 
-read -p 'Add key to github.com and press enter when finished... '
 gedit "$ssh_path.pub"
+read -p 'Add key to github.com and press enter when finished... '
+
 
 exit
