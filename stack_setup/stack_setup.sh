@@ -120,7 +120,7 @@ echo $'\n***   HEADS UP! --- Right now, you can only clone from repos in github.
 read -p $'\nWhat do you want to build?\n\n[0]  VM Scripting\n[1]  Git Scripts\n[2]  PERN Stack\n[3]  LAMP Stack\n\n' repo_to_clone
 
 empty_echo
-echo "Okay, let me make sure your response of [$repo_to_clone] is an available option..."
+echo "Okay, let me make sure your response of [$repo_to_clone] is an available option (currently only option [2] is available)..."
 empty_echo
 
 case $repo_to_clone in
