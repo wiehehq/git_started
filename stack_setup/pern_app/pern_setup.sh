@@ -79,9 +79,6 @@ console.log(`Server running at http://${hostname}:${port}/`);
 });
 EOF
 
-# leave_dev_note "Checking index.js creation"
-exit
-
 # Set up Postgres
 sudo apt install postgresql postgresql-contrib
 sudo service postgresql start
