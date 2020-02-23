@@ -63,8 +63,9 @@ function exit_confusedly () {
 ##### START SCRIPT LOUDLY
 start_loudly
 
+
 ##### RUN SCRIPT COMMANDS
-cat << EOF > /index.js
+cat > index.js <<"EOF" 
 const http = require('http');
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -78,7 +79,7 @@ console.log(`Server running at http://${hostname}:${port}/`);
 });
 EOF
 
-leave_dev_note "Checking index.js creation"
+# leave_dev_note "Checking index.js creation"
 exit
 
 # Set up Postgres
