@@ -65,6 +65,24 @@ start_loudly
 
 ##### RUN SCRIPT COMMANDS
 
+# Make folder for new app and its index.js file
+mkdir pern_app
+cd pern_app
+
+cat << EOF > index.js
+const http = require('http');
+const hostname = '127.0.0.1';
+const port = 3000;
+const server = http.createServer((req, res) => {
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
+});
+server.listen(port, hostname, () => {
+console.log(`Server running at http://${hostname}:${port}/`);
+});
+EOF            
+
 # Set up Postgres
 sudo apt install postgresql postgresql-contrib
 sudo service postgresql start
@@ -80,27 +98,6 @@ sudo npm install express
 # Set up Nodemon
 sudo npm install -g nodemon
 sudo npm install --save-dev nodemon
-
-# Create index.js app inside of new directory
-mkdir pern_app
-cat <<EOF > /pern_app/index.js
-# Make folder for this application and write index file
-mkdir pern_app
-cat << EOF > /pern_app/index.js
-const http = require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
-const server = http.createServer((req, res) => {
-res.statusCode = 200;
-res.setHeader('Content-Type', 'text/plain');
-res.end('Hello World');
-});
-server.listen(port, hostname, () => {
-console.log(`Server running at http://${hostname}:${port}/`);
-});
-EOF              
-
-cd pern_app
 
 # Start application
 nodemon app.js
