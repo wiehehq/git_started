@@ -64,7 +64,6 @@ function exit_confusedly () {
 start_loudly
 
 ##### RUN SCRIPT COMMANDS
-#leave_dev_note "NO COMMANDS YET \n\n CURRENT PATH: $current_path"
 
 # Set up Postgres
 sudo apt install postgresql postgresql-contrib
