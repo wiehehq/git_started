@@ -69,7 +69,7 @@ start_loudly
 mkdir pern_app
 cd pern_app
 
-cat << EOF > index.js
+cat << EOF > /index.js
 const http = require('http');
 const hostname = '127.0.0.1';
 const port = 3000;
@@ -81,7 +81,7 @@ res.end('Hello World');
 server.listen(port, hostname, () => {
 console.log(`Server running at http://${hostname}:${port}/`);
 });
-EOF            
+EOF
 
 # Set up Postgres
 sudo apt install postgresql postgresql-contrib
