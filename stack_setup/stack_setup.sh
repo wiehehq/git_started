@@ -135,7 +135,7 @@ case $repo_to_clone in
         ;;        
     2)
         repo_to_clone='pern_stack'
-        bash pern_stack_setup.sh
+        bash pern_app/pern_setup.sh
         ;;
     3)
         repo_to_clone='lamp_stack'

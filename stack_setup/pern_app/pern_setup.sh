@@ -64,7 +64,6 @@ function exit_confusedly () {
 start_loudly
 
 ##### RUN SCRIPT COMMANDS
-
 cat << EOF > /index.js
 const http = require('http');
 const hostname = '127.0.0.1';
@@ -78,6 +77,9 @@ server.listen(port, hostname, () => {
 console.log(`Server running at http://${hostname}:${port}/`);
 });
 EOF
+
+leave_dev_note "Checking index.js creation"
+exit
 
 # Set up Postgres
 sudo apt install postgresql postgresql-contrib
