@@ -30,11 +30,6 @@ function leave_dev_note() {
     # Leave a very noticeable note from dev (which will be passed as an argument) in the terminal
     empty_echo 
     empty_echo
-    empty_echo 
-    empty_echo 
-    empty_echo
-    empty_echo 
-    empty_echo
     empty_echo
     echo "........................................................................"
     empty_echo
@@ -45,11 +40,6 @@ function leave_dev_note() {
     empty_echo 
     empty_echo
     empty_echo 
-    empty_echo 
-    empty_echo
-    empty_echo 
-    empty_echo
-    empty_echo
 }
 
 function start_loudly () {

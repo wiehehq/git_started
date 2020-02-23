@@ -30,11 +30,6 @@ function leave_dev_note() {
     # Leave a very noticeable note from dev (which will be passed as an argument) in the terminal
     empty_echo 
     empty_echo
-    empty_echo 
-    empty_echo 
-    empty_echo
-    empty_echo 
-    empty_echo
     empty_echo
     echo "........................................................................"
     empty_echo
@@ -45,11 +40,6 @@ function leave_dev_note() {
     empty_echo 
     empty_echo
     empty_echo 
-    empty_echo 
-    empty_echo
-    empty_echo 
-    empty_echo
-    empty_echo
 }
 
 function start_loudly () {
@@ -74,7 +64,51 @@ function exit_confusedly () {
 start_loudly
 
 ##### RUN SCRIPT COMMANDS
-leave_dev_note "NO COMMANDS YET \n\n CURRENT PATH: $current_path"
+#leave_dev_note "NO COMMANDS YET \n\n CURRENT PATH: $current_path"
+
+# Set up Postgres
+sudo apt install postgresql postgresql-contrib
+sudo service postgresql start
+
+# Set up Node.js
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+sudo apt install -y nodejs
+sudo npm init
+
+# Set up Express
+sudo npm install express
+
+# Set up Nodemon
+sudo npm install -g nodemon
+sudo npm install --save-dev nodemon
+
+# Make folder for this application and write index file
+mkdir pern_app
+CAT << EOF > /pern_app/index.js
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+res.statusCode = 200;
+res.setHeader('Content-Type', 'text/plain');
+res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+console.log(`Server running at http://${hostname}:${port}/`);
+});
+EOF              
+
+# Start application
+nodemon app.js
+
+# Set up React
+sudo npm install -g create-react-app
+npx create-react-app awesome-project
+cd awesome-project
+npm start
 
 ##### EXIT SCRIPT LOUDLY
 exit_loudly
