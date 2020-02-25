@@ -55,6 +55,7 @@ function leave_dev_note() {
 function start_loudly () {
    # Leave a very noticeable note from dev (without a need for an argument) in the terminal saying the script will "start running commands"
     leave_dev_note "!!!!!!!!!!!!   STARTING LOUDLY   !!!!!!!!!!!!"
+    echo "!!!!   [$current_path]   !!!!!"
 }
 
 function exit_loudly () {
@@ -73,17 +74,21 @@ function exit_confusedly () {
 
 ##### START SCRIPT LOUDLY
 start_loudly
-echo "STARTING SCRIPT FOR THE FILE BELOW..."
-echo $current_path
 
 
 # Install Apache and update firewall
+leave_dev_note "apt install apache2"
 sudo apt install apache2
+leave_dev_note "in apache"
 sudo ufw allow in "Apache Full"
 
+
 # Install MySQL
+leave_dev_note "install mysql-server"
 sudo apt install mysql-server
+leave_dev_note "secure installation"
 sudo mysql_secure_installation
+leave_dev_note "run mysql"
 sudo mysql
 
 
