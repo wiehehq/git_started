@@ -86,8 +86,8 @@ sudo ufw allow in "Apache Full"
 # Install MySQL
 leave_dev_note "install mysql-server"
 sudo apt install mysql-server
-leave_dev_note "secure installation"
-sudo mysql_secure_installation
+leave_dev_note "pipe y to secure installation"
+echo 'y' | sudo mysql_secure_installation
 leave_dev_note "run mysql"
 sudo mysql
 

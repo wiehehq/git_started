@@ -139,7 +139,7 @@ case $repo_to_clone in
         ;;
     3)
         repo_to_clone='lamp_stack'
-        lamp_stack_setup.sh
+        bash lamp_stack_setup.sh
         ;;
     *)
         exit_confusedly
