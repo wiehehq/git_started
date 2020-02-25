@@ -76,8 +76,16 @@ start_loudly
 echo "STARTING SCRIPT FOR THE FILE BELOW..."
 echo $current_path
 
-##### RUN SCRIPT COMMANDS
-leave_dev_note "NO COMMANDS YET \n\n CURRENT PATH: $current_path"
+
+# Install Apache and update firewall
+sudo apt install apache2
+sudo ufw allow in "Apache Full"
+
+# Install MySQL
+sudo apt install mysql-server
+sudo mysql_secure_installation
+sudo mysql
+
 
 ##### EXIT SCRIPT LOUDLY
 exit_loudly
