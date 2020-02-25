@@ -90,8 +90,10 @@ leave_dev_note "mysql secure installation"
 sudo mysql_secure_installation
 leave_dev_note "run mysql"
 sudo mysql
+echo 'SELECT user,authentication_string,plugin,host FROM mysql.user;'
 
 
 ##### EXIT SCRIPT LOUDLY
-exit_loudly
+exit
+# exit_loudly
 
