@@ -86,11 +86,17 @@ sudo ufw allow in "Apache Full"
 # Install MySQL
 leave_dev_note "install mysql-server"
 sudo apt install mysql-server
-leave_dev_note "mysql secure installation"
+leave_dev_note "mysql secure installation > Y > 0 > [your_new_root_password] > (If prompted 'Change the password for root ?', then answer -Y- > Y (remove anon users) > Y (disable remote root logins) > Y (load new rules for auto-respect) > (bash sudo mysql at this stage)))"
 sudo mysql_secure_installation
 leave_dev_note "run mysql"
 sudo mysql
+leave_dev_note "select mysql users"
 echo 'SELECT user,authentication_string,plugin,host FROM mysql.user;'
+leave_dev_note "alter root user"
+echo "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
+leave_dev_note "flush privileges"
+echo "FLUSH PRIVILEGES;"
+
 
 
 ##### EXIT SCRIPT LOUDLY
