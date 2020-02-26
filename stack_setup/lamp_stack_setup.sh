@@ -90,12 +90,7 @@ leave_dev_note "mysql secure installation > Y > 0 > [your_new_root_password] > (
 sudo mysql_secure_installation
 leave_dev_note "run mysql"
 sudo mysql
-leave_dev_note "select mysql users"
-echo 'SELECT user,authentication_string,plugin,host FROM mysql.user;'
-leave_dev_note "alter root user"
-echo "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';"
-leave_dev_note "flush privileges"
-echo "FLUSH PRIVILEGES;"
+leave_dev_note "[SELECT user,authentication_string,plugin,host FROM mysql.user;]\n[ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';]\n[FLUSH PRIVILEGES;]"
 
 
 
