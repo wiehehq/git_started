@@ -86,7 +86,9 @@ sudo ufw allow in "Apache Full"
 # Install MySQL
 leave_dev_note "install mysql-server"
 sudo apt install mysql-server
-leave_dev_note "\n[SELECT user,authentication_string,plugin,host FROM mysql.user;]\n[ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';]\n[FLUSH PRIVILEGES;]\n"
+leave_dev_note "Beginning of MySQL commands"
+printf "\n[SELECT user,authentication_string,plugin,host FROM mysql.user;]\n[ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';]\n[FLUSH PRIVILEGES;]\n"
+leave_dev_note "End of MySQL commands"
 sudo mysql_secure_installation
 leave_dev_note "run mysql"
 sudo mysql
